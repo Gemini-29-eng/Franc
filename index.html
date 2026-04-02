@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Franc</title>
 
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+      margin-top: 100px;
+    }
+
+    h1 {
+      font-size: 60px;
+      margin-bottom: 40px;
+    }
+
+    input {
+      padding: 12px;
+      width: 300px;
+      border-radius: 25px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border-radius: 25px;
+      border: none;
+      margin-left: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Franc</h1>
+
+  <input id="search" placeholder="Rechercher sur Franc...">
+  <button onclick="search()">Rechercher</button>
+
+  <script>
+    function search() {
+      let query = document.getElementById("search").value;
+      alert("Recherche sur Franc : " + query);
+    }
+  </script>
+
+</body>
+</html>
