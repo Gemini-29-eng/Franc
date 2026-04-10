@@ -1,0 +1,49 @@
+<input id="search" placeholder="Recherche sur Franc...">
+<button onclick="brain()">Rechercher</button>
+
+<div id="results"></div>
+
+<script>
+async function brain() {
+  let q = document.getElementById("search").value.toLowerCase();
+  let container = document.getElementById("results");
+
+  container.innerHTML = "Chargement...";
+
+  // 🧠 1. LOGIQUE INTELLIGENTE
+  if (q.includes("youtube")) {
+    window.location.href = "https://www.youtube.com/results?search_query=" + q;
+    return;
+  }
+
+  if (q.includes("wikipedia") || q.includes("wiki")) {
+    window.location.href = "https://fr.wikipedia.org/wiki/" + q;
+    return;
+  }
+
+  // 🧠 2. MÉTÉO
+  if (q.includes("météo")) {
+    container.innerHTML = `
+      <h3>🌤️ Résultat rapide</h3>
+      <a href="https://www.meteofrance.com/recherche?q=${q}" target="_blank">Voir la météo</a>
+    `;
+    return;
+  }
+
+  // 🧠 3. ACTUALITÉS
+  if (q.includes("actualité") || q.includes("news")) {
+    container.innerHTML = `
+      <h3>📰 Actualités</h3>
+      <a href="https://duckduckgo.com/?q=${q}&iar=news&ia=news" target="_blank">Voir les news</a>
+    `;
+    return;
+  }
+
+  // 🧠 4. RECHERCHE GÉNÉRALE (fallback)
+  container.innerHTML = `
+    <h3>🌍 Résultats web</h3>
+    <p><a href="https://duckduckgo.com/?q=${q}" target="_blank">Rechercher sur DuckDuckGo</a></p>
+    <p><a href="https://search.brave.com/search?q=${q}" target="_blank">Rechercher sur Brave</a></p>
+  `;
+}
+</script>
