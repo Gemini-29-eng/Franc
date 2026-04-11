@@ -1,0 +1,43 @@
+// 🔎 Simuler un moteur de recherche
+function search() {
+  let input = document.getElementById("searchInput").value;
+  let results = document.getElementById("results");
+
+  results.innerHTML = "";
+
+  if (input === "") {
+    results.innerHTML = "<p>Veuillez écrire quelque chose.</p>";
+    return;
+  }
+
+  // Simulation de résultats
+  let fakeResults = [
+    "Résultat 1 sur " + input,
+    "Article lié à " + input,
+    "Information importante sur " + input
+  ];
+
+  fakeResults.forEach(item => {
+    let div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = "🔎 " + item;
+    results.appendChild(div);
+  });
+}
+
+// 📰 Actualités (simulées pour le moment)
+let newsData = [
+  "🌍 Le climat devient une priorité mondiale",
+  "🤖 L'intelligence artificielle évolue rapidement",
+  "⚠️ Tensions géopolitiques en hausse",
+  "💻 Les technologies transforment l'économie"
+];
+
+let newsBox = document.getElementById("news");
+
+newsData.forEach(n => {
+  let div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = n;
+  newsBox.appendChild(div);
+});
